@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{% endblock title %}
+{% block body %}
+{% include "header.html" %}
+
+
+<div class="container">
+    <h2 class="text-center">Welcome to ToDos List - Add a Task</h2>
+    <form action="/" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="">Text Title</label>
+        <input type="text" class="form-control" name="taskTitle" value="{{taskTitle}}" aria-describedby="emailHelpId" placeholder="">
+        <label for="">Text Description</label>
+        <textarea class="form-control" name="taskDes" value="{{taskDes}}" cols="30" rows="10"></textarea>
+      </div>
+      <button class="btn btn-primary">Submit</button>
+    </form>  
+  </div>
+{% include "footer.html" %}
+{% endblock body %}
